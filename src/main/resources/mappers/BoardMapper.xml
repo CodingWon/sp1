@@ -12,6 +12,6 @@
         select bno,title,content,writer
         from tbl_board
         order by bno desc
-        limit #{aa},10
+        limit #{skip},#{size}
     </select>
 </mapper>

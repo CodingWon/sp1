@@ -28,7 +28,7 @@ public class BoardMapperTests {
 
     @Test
     public void testSelctList(){
-        List<Board> boardList = boardMapper.selectList();
+        List<Board> boardList = boardMapper.selectList(10);
         boardList.forEach(board -> log.info(board));
     }
 

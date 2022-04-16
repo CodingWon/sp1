@@ -8,10 +8,10 @@
         values (#{title} ,#{content},#{writer});
     </insert>
     <!--resultType 한 로우씩 읽는다. -->
-    <select id="selectList" resultType="org.zerock.sp1.domain.Board">
+    <select id="selectList"  resultType="org.zerock.sp1.domain.Board">
         select bno,title,content,writer
         from tbl_board
         order by bno desc
-        limit 10,10
+        limit #{aa},10
     </select>
 </mapper>

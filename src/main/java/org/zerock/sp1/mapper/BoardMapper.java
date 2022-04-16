@@ -8,6 +8,6 @@ public interface BoardMapper {
 
     void insert(Board board);
 
-    List<Board> selectList();
+    List<Board> selectList(int skip);
 
 }

@@ -1,6 +1,7 @@
 package org.zerock.sp1.mapper;
 
 
+import lombok.Builder;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -30,6 +31,25 @@ public class BoardMapperTests {
     public void testSelctList(){
         List<Board> boardList = boardMapper.selectList(10,20);
         boardList.forEach(board -> log.info(board));
+    }
+
+    @Test
+    public void testSelectOne(){
+        int bno = 140;
+        Board board = boardMapper.selectOne(bno);
+        log.info(board);
+    }
+
+    @Test
+    public void testDelte(){
+        int bno = 32;
+        boardMapper.delete(bno);
+    }
+    @Test
+    public void testUpdate(){
+        Board board = Board.builder().title("안녕하세요").content("반갑습니다.").bno(3).build();
+        boardMapper.update(board);
+        log.info(board);
     }
 
 }

@@ -2,6 +2,9 @@ package org.zerock.sp1.domain;
 
 import lombok.*;
 
+import java.time.LocalDateTime;
+
+
 @Getter
 @ToString
 @Builder
@@ -13,4 +16,7 @@ public class Board {
     private String title;
     private String content;
     private String writer;
+
+    private LocalDateTime regDate;
+    private LocalDateTime updateDate;
 }

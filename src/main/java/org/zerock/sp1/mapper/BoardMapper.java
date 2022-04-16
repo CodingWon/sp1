@@ -5,10 +5,5 @@ import org.zerock.sp1.domain.Board;
 
 import java.util.List;
 
-public interface BoardMapper {
-
-    void insert(Board board);
-
-    List<Board> selectList(@Param("skip") int skip, @Param("size")int size);
-
+public interface BoardMapper extends GenericMapper<Board,Integer> {
 }

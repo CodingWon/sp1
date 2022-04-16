@@ -17,4 +17,18 @@
         order by bno desc
         limit #{skip},#{size}
     </select>
+    
+    <delete id="delete">
+        delete from tbl_board where bno = #{bno}
+    </delete>
+
+    <select id="selectOne" resultType="org.zerock.sp1.domain.Board">
+        select * from tbl_board where bno = #{bno}
+    </select>
+    
+    <update id="update">
+        UPDATE tbl_board
+        SET title = #{title}, content =#{content}, updateDate = now()
+        where bno = #{bno}
+    </update>
 </mapper>

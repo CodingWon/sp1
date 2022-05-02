@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.zerock.sp1.domain.Board;
+import org.zerock.sp1.dto.ListDTO;
 
 import java.util.List;
 
@@ -29,7 +30,10 @@ public class BoardMapperTests {
 
     @Test
     public void testSelctList(){
-        List<Board> boardList = boardMapper.selectList(10,20);
+        ListDTO listDTO =new ListDTO();
+        listDTO.setType("tcw");
+        listDTO.setKeyword("11");
+        List<Board> boardList = boardMapper.selectList(listDTO);
         boardList.forEach(board -> log.info(board));
     }
 
@@ -43,7 +47,7 @@ public class BoardMapperTests {
     @Test
     public void testDelte(){
         int bno = 32;
-        boardMapper.delete(bno);
+        boardMapper.remove(bno);
     }
     @Test
     public void testUpdate(){

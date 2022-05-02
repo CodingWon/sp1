@@ -1,17 +1,11 @@
-package org.zerock.sp1.domain;
+package org.zerock.sp1.dto;
 
-import lombok.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 
-
-@Getter
-@ToString
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-public class Board {
-
+@Data
+public class BoardDTO {
     private Integer bno;
     private String title;
     private String content;
